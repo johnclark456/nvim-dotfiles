@@ -11,3 +11,4 @@ lua/plugins/disable-news-alert.lua
 lua/plugins/omarchy-theme-hotreload.lua
 lua/plugins/snacks-animated-scrolling-off.lua
 lua/plugins/theme.lua
+lazy-lock.json
