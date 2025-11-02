@@ -11,7 +11,7 @@ vim.filetype.add({
   extension = {
     bzl = "bzl",
   },
-  pattern = {
+  filename = {
     ["BUILD"] = "bzl",
     ["WORKSPACE"] = "bzl",
   },
