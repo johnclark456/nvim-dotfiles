@@ -25,19 +25,22 @@ return {
     },
   },
 
-  -- LSP support via bazel-lsp
   {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        bazel_ls = {
-          cmd = { "bazel-lsp" },
-          filetypes = { "bzl", "bazel", "starlark" },
-          root_dir = function(fname)
-            return require("lspconfig.util").root_pattern("WORKSPACE", ".git")(fname)
-          end,
+    "nvim-lua/plenary.nvim",
+    init = function()
+      vim.filetype.add({
+        extension = {
+          bzl = "bzl",
+          bazel = "bazel",
         },
-      },
-    },
+        filename = {
+          ["BUILD"] = "bzl",
+          ["BUILD.bazel"] = "bzl",
+          ["MODULE.bazel"] = "bzl",
+          ["WORKSPACE"] = "bzl",
+          ["WORKSPACE.bazel"] = "bzl",
+        },
+      })
+    end,
   },
 }
