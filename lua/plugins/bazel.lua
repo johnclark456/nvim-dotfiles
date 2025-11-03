@@ -1,10 +1,4 @@
 return {
-  -- Syntax highlighting for Bazel/Starlark
-  {
-    "bazelbuild/vim-bazel",
-    ft = { "bzl", "bazel", "BUILD", "WORKSPACE" },
-  },
-
   -- Treesitter grammar (optional but improves highlighting & folding)
   {
     "nvim-treesitter/nvim-treesitter",
@@ -36,7 +30,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        ["bazel-lsp"] = {
+        bazel_ls = {
           cmd = { "bazel-lsp" },
           filetypes = { "bzl", "bazel", "starlark" },
           root_dir = function(fname)
