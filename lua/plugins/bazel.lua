@@ -7,6 +7,12 @@ return {
     end,
   },
 
+  {
+    "mason-org/mason.nvim",
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed, { "bzl" })
+    end,
+  },
   -- Formatting via buildifier
   {
     "stevearc/conform.nvim",
